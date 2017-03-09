@@ -35,7 +35,8 @@ gulp.task("js:vendor", function() {
 gulp.task("css:vendor", function() {
 	return gulp.src([
 		"node_modules/bootstrap/dist/css/bootstrap.css",
-		"node_modules/toastr/build/toastr.min.css"
+		"node_modules/toastr/build/toastr.min.css",
+		"node_modules/Font_Awesome/font-awesome.css"
 	])
 		.pipe(gulpIf(!isDevelopment,nano()))
 		.pipe(concat("vendor.css"))
@@ -43,11 +44,11 @@ gulp.task("css:vendor", function() {
 });
 
 gulp.task("css:own", function() {
-	return gulp.src("src/css/**/*.less")
+	return gulp.src("src/css/main.less")
 		.pipe(gulpIf(isDevelopment,sourcemaps.init()))
 		.pipe(less())
 		.pipe(autoprefixer("last 2 versions"))
-		.pipe(nano())
+		// .pipe(nano())
 		.pipe(gulpIf(isDevelopment,sourcemaps.write()))
 		.pipe(gulp.dest("dist/css"))
 		.pipe(sync.stream());
