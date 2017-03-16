@@ -5,15 +5,21 @@
 	background-color: #4cb1ca;
 }
 
-.footer__part02 {
-	background-color: #39a0b9;
-}
 
 .footer__part02 {
 	display: flex;
+	background-color: #39a0b9;
 	// flex-wrap: wrap;
-	// justify-content: space-between;
+	.facebook__plugins {
+
+	}
+	
 	.from__twitter {
+
+	}
+	
+	.contact__us {
+
 
 	}
 	
@@ -37,7 +43,8 @@
 
 
 .orders__over {
-	display: inline-flex;
+	display: inline-block;
+
 
 	
 }
@@ -102,6 +109,24 @@
     color: white;
 }
 
-.ul__list__information {
-	list-style: none;
+
+.text__contact__us {
+	font-family:@vfont;
+   	font-size: 20px;
+    color: white;
+    .link__contact__us {
+        text-decoration: none;
+        color: white;  
+        &:hover,
+        &:focus { 
+                text-decoration: none;
+                color: white;                                
+                    }  
+    }
+}
+
+.map__contact__us {
+	font-family:@vfont;
+   	font-size: 13px;
+    color: white;
 }

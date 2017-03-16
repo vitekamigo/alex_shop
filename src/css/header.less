@@ -5,21 +5,22 @@
 	
     .nav-top {
     	display: flex;
-        justify-content: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
     	background: #4cb1ca;
     	.language  {
                     font-family:@vfont;
                     font-size: 13px; 
-                    margin-right: 25%;
+                    // margin-right: 25%;
                     .header__select {
                     background: #4cb1ca;
                                     }
         	           }
 
     	.log {
-                margin-left: 10%;
-                margin-right: 5%;
-                 //menu log
+                // margin-left: 10%;
+                // margin-right: 5%;
+                 
                 .nav__log { 
                                     
                     .menu__log { 
@@ -50,14 +51,16 @@
     
     .nav-bot {
         		display: flex;
+                // justify-content: space-between;
+                flex-wrap: wrap;
             	
             	.logo {
-            		margin-left: 9.5%;
+            		// margin-left: 9.5%;
             	}
             	//menu
                 .nav__m { 
                         // display: flex; 
-                        margin-left: 5%; 
+                        // margin-left: 5%; 
 
                 
                         .menu__m { 
@@ -91,10 +94,10 @@
 
                 .search {
                 		margin-top: 0.2%;
-                        margin-left: 11%;
+                        // margin-left: 20px;
                 	}
                 .cart__header {
-                        margin-left: 2%;
+                        // margin-left: 2%;
                         margin-top: 0.2%;
                         .cart__text {
                             display: inline-block;
@@ -102,7 +105,7 @@
                             font-size: 14px;
                             color: #656565;
                             padding-top:3px;
-                            padding-left: 5px;
+                            // padding-left: 5px;
                         }
                         
 
@@ -164,3 +167,8 @@
                 color: #cfc6bc;                                
                     }
                 }
+.search__link {
+            display: inline-block;
+            margin-top: 0.2%;
+            padding: 0; 
+}
