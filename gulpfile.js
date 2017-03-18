@@ -24,8 +24,7 @@ gulp.task("js:vendor", function() {
 	return gulp.src([
 		"node_modules/jquery/dist/jquery.js",
 		"node_modules/bootstrap/dist/js/bootstrap.js",
-		"node_modules/toastr/build/toastr.min.js",
-		"https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"
+		"node_modules/toastr/build/toastr.min.js"
 		])
 		.pipe(concat("vendor.js"))
 		.pipe(gulpIf(!isDevelopment,uglify()))
@@ -37,9 +36,8 @@ gulp.task("css:vendor", function() {
 	return gulp.src([
 		"node_modules/bootstrap/dist/css/bootstrap.css",
 		"node_modules/toastr/build/toastr.min.css",
-		"node_modules/Font_Awesome/font-awesome.css",
-		"https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css"
-	])
+		"node_modules/Font_Awesome/font-awesome.css"
+		])
 		.pipe(gulpIf(!isDevelopment,nano()))
 		.pipe(concat("vendor.css"))
 		.pipe(gulp.dest("dist/css"));
