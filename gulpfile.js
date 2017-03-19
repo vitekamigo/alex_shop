@@ -24,6 +24,7 @@ gulp.task("js:vendor", function() {
 	return gulp.src([
 		"node_modules/jquery/dist/jquery.js",
 		"node_modules/bootstrap/dist/js/bootstrap.js",
+		"node_modules/datatables.net/js/jquery.dataTables.js",
 		"node_modules/toastr/build/toastr.min.js"
 		])
 		.pipe(concat("vendor.js"))
@@ -65,7 +66,7 @@ gulp.task("html", function() {
 gulp.task("css", ["css:own", "css:vendor"]);
 gulp.task("js", ["js:own", "js:vendor"]);
 
-gulp.task("watch", ["build", "imagemin", "fonts"], function(){
+gulp.task("watch", ["build", "imagemin", "fonts","json"], function(){
 	sync.init({
 		server: "dist"
 	});
@@ -87,7 +88,12 @@ gulp.task("fonts", function(){
         .pipe(gulp.dest("dist/fonts"));
 });
 
+gulp.task("json", function(){ 
+    return gulp.src("src/data.json")
+        .pipe(gulp.dest("dist/"));
+});
+
 
 
 gulp.task("build", ["html", "css", "js"]);
-gulp.task("default", ["build", "imagemin", "fonts","watch" ]);
+gulp.task("default", ["build", "imagemin", "fonts","json","watch" ]);
